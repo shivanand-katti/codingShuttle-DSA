@@ -1,0 +1,220 @@
+**Working of java program:
+
+Ex: Hello.java ----> byte code(.class) --> JMM (run program).
+
+JVM, JRE, and JDK:
+1. JVM (Java Virtual Machine):
+   - It is an abstract machine that provides a runtime environment to execute Java bytecode.
+   - It converts bytecode into machine-specific code.
+   - It is platform-dependent, meaning there are different JVMs for different operating systems.
+2. JRE (Java Runtime Environment):
+    - It is a package that provides the libraries, Java Virtual Machine (JVM), and other components to run 
+        applications written in Java.
+    - It does not include development tools like compilers or debuggers.
+    - It is used by end-users to run Java applications.
+3. JDK (Java Development Kit):
+    - It is a complete package that includes JRE along with development tools like compilers (javac), 
+        debuggers, and other utilities needed for Java development.
+    - It is used by developers to write, compile, and debug Java applications.
+    - It contains everything that JRE has, plus additional tools for development.
+In summary:
+- JVM is the engine that runs Java bytecode.
+- JRE is the environment that provides the necessary libraries and JVM to run Java applications.
+- JDK is the complete toolkit for Java development, including JRE and development tools.
+
+** Java Keywords:
+Java keywords are reserved words that have a predefined meaning in the Java programming language.
+They cannot be used as identifiers (like variable names, class names, or method names) in a Java program.
+Here are some commonly used Java keywords:  
+1. abstract
+2. assert
+3. boolean
+4. break
+5. byte
+6. case
+7. catch
+8. char
+9. class
+10. const
+11. continue
+12. default
+13. do
+14. double
+15. else
+16. enum
+17. extends
+18. final
+19. finally
+20. float
+21. for
+22. if
+23. goto
+24. implements
+25. import
+26. instanceof
+27. int
+28. interface
+29. long..
+
+** Java Variables:
+In Java, a variable is a container that holds data values during the execution of a program.
+There are three main types of variables in Java:
+1. Local Variables:
+   - Declared within a method, constructor, or block.
+   - Accessible only within the scope they are defined.
+   - Must be initialized before use.
+2. Instance Variables:
+    - Declared within a class but outside
+        any method, constructor, or block.
+    - Accessible by all methods in the class.
+    - Each instance (object) of the class has its own copy of instance variables.
+3. Static Variables (Class Variables):
+    - Declared with the static keyword within a class but outside
+        any method, constructor, or block.
+    - Shared among all instances of the class.
+    - Accessible using the class name or through instances.
+Example:
+```java
+public class Example {
+    // Instance variable
+    int instanceVar;
+
+    // Static variable
+    static int staticVar;
+
+    public void method() {
+        // Local variable
+        int localVar = 10;
+        System.out.println("Local Variable: " + localVar);
+    }
+
+    public static void main(String[] args) {
+        Example obj1 = new Example();
+        Example obj2 = new Example();
+
+        obj1.instanceVar = 5;
+        obj2.instanceVar = 10;
+
+        Example.staticVar = 15;
+
+        System.out.println("Instance Variable of obj1: " + obj1.instanceVar);
+        System.out.println("Instance Variable of obj2: " + obj2.instanceVar);
+        System.out.println("Static Variable: " + Example.staticVar);
+
+        obj1.method();
+    }
+}
+```
+In this example:
+- `instanceVar` is an instance variable, each object (`obj1` and `obj2`) has its own copy.
+- `staticVar` is a static variable, shared among all instances of the class.
+- `localVar` is a local variable, accessible only within the `method()`.
+
+** 8 Types of Data Types:
+Java has two main categories of data types: primitive data types and reference data types. Here, we will focus on the 8 primitive data types in Java:
+1. byte:
+   - Size: 8 bits
+   - Range: -128 to 127
+   - Description: Used to save memory in large arrays.
+2. short:
+    - Size: 16 bits
+    - Range: -32,768 to 32,767
+    - Description: Also used to save memory in large arrays.
+3. int:
+    - Size: 32 bits
+    - Range: -2,147,483,648 to 2,147,483,647
+    - Description: Default data type for integer values.
+4. long:
+    - Size: 64 bits
+    - Range: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+    - Description: Used for larger integer values.
+5. float:
+    - Size: 32 bits
+    - Range: Approximately ±3.40282347E+38F (6-7 significant decimal digits)
+    - Description: Used for single-precision floating-point values.
+6. double:
+     - Size: 64 bits
+     - Range: Approximately ±1.79769313486231570E+308 (15 significant decimal digits)
+     - Description: Used for double-precision floating-point values.
+7. char:
+    - Size: 16 bits
+    - Range: '\u0000' (0) to '\uffff' (65,535)
+    - Description: Used to store a single 16-bit Unicode character.
+8. boolean:
+    - Size: Not precisely defined (depends on the JVM implementation)
+    - Values: true or false
+    - Description: Used for simple flags that track true/false conditions.
+These primitive data types are the building blocks for data manipulation in Java programs.
+
+** Java Operators:
+Java operators are special symbols or keywords that perform operations on variables and values.
+Here are the main categories of Java operators:
+1. Arithmetic Operators:
+   - Used for basic mathematical operations.
+   - Examples: + (addition), - (subtraction), * (multiplication), / (division), % (modulus)
+2. Relational Operators:
+    - Used to compare two values.
+    - Examples: == (equal to), != (not equal to), > (greater than), < (less than), >= (greater than or equal to), <= (less than or equal to)
+3. Logical Operators:
+    - Used to combine multiple boolean expressions.
+    - Examples: && (logical AND), || (logical OR), ! (logical NOT)
+4. Assignment Operators:
+    - Used to assign values to variables.
+    - Examples: = (simple assignment), += (add and assign), -= (subtract and assign), *= (multiply and assign), /= (divide and assign), %= (modulus and assign)
+5. Unary Operators:
+    - Used with a single operand to perform various operations.
+    - Examples: ++ (increment), -- (decrement), + (unary plus), - (unary minus)
+6. Bitwise Operators:
+    - Used to perform bit-level operations.
+    - Examples: & (bitwise AND), | (bitwise OR), ^ (bitwise XOR), ~ (bitwise NOT), << (left shift), >> (right shift), >>> (unsigned right shift)
+7. Ternary Operator:
+    - A shorthand for an if-else statement.
+    - Syntax: condition ? expression1 : expression2
+    - Example: int result = (a > b) ? a : b; // assigns the greater value to result
+8. instanceof Operator:
+    - Used to test whether an object is an instance of a specific class or implements a specific interface.
+    - Example: if (obj instanceof String) { // do something }
+These operators are essential for performing various operations in Java programming.
+
+* Binary Addition Operator:
+The binary addition operator in Java is the plus sign (+). It is used to add two numeric values together.
+The operator takes two operands and returns their sum.
+Example:
+```java
+public class BinaryAdditionExample {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 10;
+        int sum = a + b; // Using the binary addition operator
+        System.out.println("The sum of " + a + " and " + b + " is: " + sum);
+    }
+}
+
+** Types of Operators in Java:
+1. Arithmetic Operators
+    - Examples: +, -, *, /, %
+2. Relational Operators
+    - Examples: ==, !=, >, <, >=, <=
+3. Logical Operators
+    - Examples: &&, ||, !
+4. Assignment Operators
+    - Examples: =, +=, -=, *=, /=, %=
+5. Unary Operators
+    - Examples: ++, --, +, -
+6. Bitwise Operators
+    - Examples: &, |, ^, ~, <<, >>, >>>
+7. Ternary Operator
+    - Example: condition ? expression1 : expression2
+8. instanceof Operator
+    - Example: obj instanceof ClassName
+These operators are used to perform various operations in Java programming.
+
+```
+** Java Control Statements:
+Java control statements are used to control the flow of execution in a program. They allow you to make decisions, repeat actions, and branch the execution based on certain conditions.
+Here are the main types of control statements in Java:
+1. Conditional Statements:
+   - if statement: Executes a block of code if a specified condition is true.
+   - if-else statement: Executes one block of code if a condition is true and another block if it is false.
+   - switch statement: Allows multi-way branching based on the value of a variable.
+
